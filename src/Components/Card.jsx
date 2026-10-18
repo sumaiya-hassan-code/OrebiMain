@@ -36,7 +36,7 @@ const Card = ({product_imgSrc,product_badge, product_wishlist, product_compare, 
                             {product_name} 
                         </div>
                         <div className="text-[16px] text-[#767676]">
-                            {product_price} 
+                            ${product_price} 
                         </div>
                     </div>
                     <div className="text-[16px] text-[#767676]">
