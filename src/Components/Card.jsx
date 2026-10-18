@@ -12,7 +12,7 @@ const Card = ({product_imgSrc,product_badge, product_wishlist, product_compare, 
             imgSrc={product_imgSrc} 
             className=""/>
             <Button className={'absolute top-5 left-5'} >{product_badge}</Button>
-            <div className="absolute bottom-24  w-full h-1/3 p-5 flex flex-col justify-between gap-y-2 bg-white opacity-0 group-hover:opacity-100 transition-all duration-300">
+            <div className="absolute bottom-23  w-full h-1/3 p-5 flex flex-col justify-between gap-y-2 bg-white opacity-0 group-hover:opacity-100 transition-all duration-300">
                 <div className="flex justify-end items-center gap-x-3">
                     <div className="text-[16px] text-[#767676] hover:text-black hover:font-bold transition-all duration-300">{product_wishlist}</div>
                     <FaHeart />
