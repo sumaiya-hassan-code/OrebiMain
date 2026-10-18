@@ -1,10 +1,10 @@
 import { useRef } from "react";
 import Card from "../Components/Card";
 
-import card_img from "../assets/New_Arrivals_img.png";
-import card_img2 from "../assets/New_Arrivals_img(2).png";
-import card_img3 from "../assets/New_Arrivals_img(3).png";
-import card_img4 from "../assets/New_Arrivals_img(4).png";
+import card_img from "../assets/Image_B (3).png";
+import card_img2 from "../assets/Image_B(2).png";
+import card_img3 from "../assets/Image_B(1).png";
+import card_img4 from "../assets/Image_B.png";
 
 import Container from "../Components/Container";
 import { Swiper, SwiperSlide } from "swiper/react";
