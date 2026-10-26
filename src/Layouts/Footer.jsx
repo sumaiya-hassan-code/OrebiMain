@@ -12,7 +12,7 @@ const Footer = () => {
         <Flex className={'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8'}>
           <div className="flex flex-col gap-y-5">
             <h3 className={"text-[16px] font-bold text-[#262626]"}>MENU</h3>
-            <ul className="gap-y-5">
+            <ul className="flex flex-col gap-y-1">
               <li><Link to={'/home'} className={"text-[#767676] mt-5 hover:font-bold hover:text-[#262626] transition-all duration-300"}>Home</Link></li>
               <li><Link to={'/shop'} className={"text-[#767676] hover:font-bold hover:text-[#262626] transition-all duration-300"}>Shop</Link></li>
               <li><Link to={'/about'} className={"text-[#767676] hover:font-bold hover:text-[#262626] transition-all duration-300"}>About</Link></li>
@@ -23,7 +23,7 @@ const Footer = () => {
 
           <div className="flex flex-col gap-y-5">
             <h3 className={"text-[16px] font-bold text-[#262626]"}>SHOP</h3>
-            <ul className="gap-y-5">
+            <ul className="flex flex-col gap-y-1">
               <li><Link to={'/home'} className={"text-[#767676] hover:font-bold hover:text-[#262626] transition-all duration-300"}>Category 1</Link></li>
               <li><Link to={'/shop'} className={"text-[#767676] hover:font-bold hover:text-[#262626] transition-all duration-300"}>Category 2</Link></li>
               <li><Link to={'/about'} className={"text-[#767676] hover:font-bold hover:text-[#262626] transition-all duration-300"}>Category 3</Link></li>
@@ -34,7 +34,7 @@ const Footer = () => {
 
           <div className="flex flex-col gap-y-5">
             <h3 className={"text-[16px] font-bold text-[#262626]"}>HELP</h3>
-            <ul className="gap-y-5">
+            <ul className="flex flex-col gap-y-1">
               <li><Link to={'/shop'} className={"text-[#767676] hover:font-bold hover:text-[#262626] transition-all duration-300"}>Privacy Policy</Link></li>
               <li><Link to={'/about'} className={"text-[#767676] hover:font-bold hover:text-[#262626] transition-all duration-300"}>Terms & Conditions</Link></li>
               <li><Link to={'/contact'} className={"text-[#767676] hover:font-bold hover:text-[#262626] transition-all duration-300"}>Special E-shop</Link></li>
@@ -42,14 +42,14 @@ const Footer = () => {
               <li><Link to={'/home'} className={"text-[#767676] hover:font-bold hover:text-[#262626] transition-all duration-300"}>Secure Payments</Link></li>
             </ul>
           </div>
-          <div className="flex flex-col gap-y-5">
-            <div className="text-[16px] font-bold text-[#262626] -mt-14">
+          <div className="flex flex-col gap-y-1">
+            <div className="text-[16px] font-bold text-[#262626] -mt-20">
               <p>(052) 611-5711</p>
               <p>company@domain.com</p>
             </div>
             <p className="text-[14px] text-[#6D6D6D]">575 Crescent Ave. Quakertown, PA 18951</p>
           </div>
-          <div className="-mt-31">
+          <div className="-mt-35">
             <Image imgSrc={logo} className={''}/>
           </div>
         </Flex>

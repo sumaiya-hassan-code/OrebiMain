@@ -5,6 +5,7 @@ import logo from "../assets/OREBI©.png"
 import { Link } from "react-router-dom"
 import { FaSearch } from "react-icons/fa";
 import { useState, useRef, useEffect } from "react"
+import { ImCross } from "react-icons/im";
 
 const Header = () => {
 
@@ -75,12 +76,12 @@ const Header = () => {
                     {showCategory && (
                     <div className="bg-[#2D2D2D] absolute top-15 w-[250px] ">
                         <ul>
-                            <li className="p-3 text-[14px] text-white border-b border-[#D8D8D8] hover:font-bold transition-all duration-300"><Link>Accesories</Link></li>
-                            <li className="p-3 text-[14px] text-white border-b border-[#D8D8D8] hover:font-bold transition-all duration-300"><Link>Furniture</Link></li>
-                            <li className="p-3 text-[14px] text-white border-b border-[#D8D8D8] hover:font-bold transition-all duration-300"><Link>Electronics</Link></li>
-                            <li className="p-3 text-[14px] text-white border-b border-[#D8D8D8] hover:font-bold transition-all duration-300"><Link>Clothes</Link></li>
-                            <li className="p-3 text-[14px] text-white border-b border-[#D8D8D8] hover:font-bold transition-all duration-300"><Link>Bags</Link></li>
-                            <li className="p-3 text-[14px] text-white border-b border-[#D8D8D8] hover:font-bold transition-all duration-300"><Link>Home appliances</Link></li>
+                            <li className="p-3 text-[14px] text-white border-b border-white/10 hover:font-bold transition-all duration-300"><Link>Accesories</Link></li>
+                            <li className="p-3 text-[14px] text-white border-b border-white/10 hover:font-bold transition-all duration-300"><Link>Furniture</Link></li>
+                            <li className="p-3 text-[14px] text-white border-b border-white/10 hover:font-bold transition-all duration-300"><Link>Electronics</Link></li>
+                            <li className="p-3 text-[14px] text-white border-b border-white/10 hover:font-bold transition-all duration-300"><Link>Clothes</Link></li>
+                            <li className="p-3 text-[14px] text-white border-b border-white/10 hover:font-bold transition-all duration-300"><Link>Bags</Link></li>
+                            <li className="p-3 text-[14px] text-white border-b border-white/10 hover:font-bold transition-all duration-300"><Link>Home appliances</Link></li>
                         </ul>
                     </div>
                     )}
@@ -106,8 +107,8 @@ const Header = () => {
                             </svg>
                             {showUser && (
                             <div className="absolute top-10 -left-30 flex flex-col items-center">
-                                <div className="bg-[#2B2B2B] text-white text-[14px] font-bold px-9 py-5">My Account</div>
-                                <div className="bg-white text-[#2B2B2B] text-[14px] px-12.5 py-5">Log Out</div>
+                                <Link to={"/"}><div className="bg-[#2B2B2B] text-white text-[14px] font-bold px-9 py-5">My Account</div></Link>
+                                <Link to={"/"}><div className="bg-white text-[#2B2B2B] text-[14px] px-12.5 py-5">Log Out</div></Link>
                             </div>
                             )}
                         </div>
@@ -118,20 +119,51 @@ const Header = () => {
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 18 16" fill="none">
                                 <path d="M15.8966 9.0698L17.3195 2.80893C17.4223 2.35689 17.0787 1.92642 16.6151 1.92642H4.79221L4.51631 0.577625C4.44757 0.241435 4.15174 0 3.80857 0H0.722408C0.323428 0 0 0.323428 0 0.722408V1.20401C0 1.60299 0.323428 1.92642 0.722408 1.92642H2.82591L4.9404 12.2639C4.43453 12.5548 4.09365 13.1003 4.09365 13.7258C4.09365 14.6567 4.84832 15.4114 5.77926 15.4114C6.71021 15.4114 7.46488 14.6567 7.46488 13.7258C7.46488 13.254 7.27083 12.8277 6.95848 12.5217H13.2689C12.9566 12.8277 12.7625 13.254 12.7625 13.7258C12.7625 14.6567 13.5172 15.4114 14.4482 15.4114C15.3791 15.4114 16.1338 14.6567 16.1338 13.7258C16.1338 13.0584 15.7458 12.4816 15.1832 12.2085L15.3493 11.4778C15.452 11.0258 15.1084 10.5953 14.6449 10.5953H6.56539L6.36839 9.63211H15.1922C15.5295 9.63211 15.8218 9.39871 15.8966 9.0698Z" fill="#262626"/>
                             </svg>
-                            {showCart && (
-                            <div className="absolute top-10 -left-30 flex flex-col items-center">
-                                <div className="w-[360px] p-5  bg-[#F5F5F3]"></div>
-                                <div className="w-[360px] p-5 "></div>
-                            </div>
-                            )}
                         </div>
+
+                        {showCart && (
+                            <div className="absolute top-39 right-0 z-50 w-[360px] bg-white border border-[#262626]/20 shadow-xl">
+                            <div className="flex items-center justify-between bg-[#F5F5F3] p-4 mb-5">
+                                <div className="flex items-center gap-x-4">
+                                    <div className="w-20 h-20 bg-gray-300">
+                                    </div>
+                                    <div>
+                                        <h3 className="text-[14px] font-bold text-[#262626]">Black Smart Watch</h3>
+                                        <p className="text-[14px] font-bold text-[#262626] mt-1">$44.00</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span className="cursor-text text-xl text-[#262626]"><ImCross /></span>
+                                </div>
+                            </div>
+
+                                <div className="px-4 py-1 mb-5">
+                                    <p className="text-[16px] text-[#767676]">
+                                    Subtotal: <span className="font-bold text-[#262626]">$44.00</span></p>
+                                </div>
+
+                                <div className="flex items-center px-4 pb-4 justify-between gap-x-5">
+                                <Link 
+                                    to="/cart" 
+                                    className="w-1/2 border border-[#262626] py-4 text-center text-[14px] font-bold text-[#262626] hover:bg-[#262626] hover:text-white transition-all duration-300">
+                                    View Cart
+                                </Link>
+                                <Link 
+                                    to="/checkout" 
+                                    className="w-1/2 bg-[#262626] border border-[#262626] py-4 text-center text-[14px] font-bold text-white hover:bg-transparent hover:text-[#262626] transition-all duration-300">
+                                    Checkout
+                                </Link>
+                                </div>
+
+                            </div>
+                        )}
                     </Flex>
                 </div>
             </Flex>
         </Container>
     </div>
     </>
-  )
+    )
 }
 
 export default Header
