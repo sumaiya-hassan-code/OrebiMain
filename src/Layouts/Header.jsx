@@ -122,7 +122,7 @@ const Header = () => {
                         </div>
 
                         {showCart && (
-                            <div className="absolute top-39 right-0 z-50 w-[360px] bg-white border border-[#262626]/20 shadow-xl">
+                            <div className="absolute top-39 right-20 z-50 w-[360px] bg-white border border-[#262626]/20 shadow-xl">
                             <div className="flex items-center justify-between bg-[#F5F5F3] p-4 mb-5">
                                 <div className="flex items-center gap-x-4">
                                     <div className="w-20 h-20 bg-gray-300">
