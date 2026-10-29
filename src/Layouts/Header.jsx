@@ -3,7 +3,7 @@ import Flex from "../Components/flex"
 import Image from "../Components/Image"
 import logo from "../assets/OREBI©.png"
 import { Link } from "react-router-dom"
-import { FaSearch } from "react-icons/fa";
+import { FaSearch, FaCaretUp, FaCaretDown, FaUser } from "react-icons/fa";
 import { useState, useRef, useEffect } from "react"
 import { ImCross } from "react-icons/im";
 
@@ -100,11 +100,9 @@ const Header = () => {
                         <div 
                         ref={userRef}
                         onClick={() => setShowUser(!showUser)} 
-                        className="relative">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="33" height="16" viewBox="0 0 33 16" fill="none">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5953 3.85284C10.5953 5.98094 8.87057 7.70569 6.74248 7.70569C4.61438 7.70569 2.88963 5.98094 2.88963 3.85284C2.88963 1.72475 4.61438 0 6.74248 0C8.87057 0 10.5953 1.72475 10.5953 3.85284ZM8.93679 8.6689H9.43946C11.6729 8.6689 13.485 10.4809 13.485 12.7144V13.9666C13.485 14.7642 12.8378 15.4114 12.0401 15.4114H1.44482C0.647157 15.4114 0 14.7642 0 13.9666V12.7144C0 10.4809 1.81204 8.6689 4.04549 8.6689H4.54816C5.2194 8.97592 5.95987 9.1505 6.74248 9.1505C7.52508 9.1505 8.26856 8.97592 8.93679 8.6689Z" fill="#262626"/>
-                            <path d="M24.6056 6H32.3944C32.9333 6 33.2027 6.63741 32.8213 7.01097L28.9283 10.8266C28.6922 11.0578 28.3078 11.0578 28.0717 10.8266L24.1787 7.01097C23.7973 6.63741 24.0667 6 24.6056 6Z" fill="#262626"/>
-                            </svg>
+                        className="relative flex ">
+                            <FaUser />
+                            {showUser ?  <FaCaretUp /> : <FaCaretDown  />   }
                             {showUser && (
                             <div className="absolute top-10 -left-30 flex flex-col items-center">
                                 <Link to={"/"}><div className="bg-[#2B2B2B] text-white text-[14px] font-bold px-9 py-5">My Account</div></Link>
