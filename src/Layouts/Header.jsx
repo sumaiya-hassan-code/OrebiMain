@@ -2,13 +2,27 @@ import Container from "../Components/Container"
 import Flex from "../Components/flex"
 import Image from "../Components/Image"
 import logo from "../assets/OREBI©.png"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom";
 import { FaSearch, FaCaretUp, FaCaretDown, FaUser } from "react-icons/fa";
 import { useState, useRef, useEffect } from "react"
 import { ImCross } from "react-icons/im";
 
 const Header = () => {
 
+
+    const [searchTerm, setSearchTerm] = useState("");
+    const navigate = useNavigate();
+
+    const handleSearch = (e) => {
+    e.preventDefault();
+    const query = searchTerm.trim();
+
+    if (query) {
+        navigate(`/shop?search=${encodeURIComponent(query)}`);
+    } else {
+        navigate("/shop");
+    }
+};
 
 
     const [showCategory, setShowCategory] = useState(false);
@@ -87,14 +101,20 @@ const Header = () => {
                     )}
                 </div>
                 
-                <div className="w-[50%] relative">
-                    <input 
-                    className="text-[#C4C4C4] text-[14px] w-full bg-white p-4"
-                    type="text"
-                    placeholder="Search Products"
-                    />
-                    <FaSearch className="absolute top-1/2 right-5 -translate-y-1/2 text-black" />
-                </div> 
+                <form onSubmit={handleSearch} className="w-[50%] relative">
+                    <input className="text-[#262626] text-[14px] w-full bg-white p-4 pr-12 outline-none border border-transparent focus:border-[#262626]"
+    type="search"
+    placeholder="Search Products"
+    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}/>
+
+                    <button
+    type="submit"
+    aria-label="Search products"
+    className="absolute top-1/2 right-5 -translate-y-1/2 text-black cursor-pointer">
+    <FaSearch />
+                    </button>
+                </form> 
                 <div className="w-[25%]">
                     <Flex className={"gap-x-5 justify-end"}>
                         <div 
