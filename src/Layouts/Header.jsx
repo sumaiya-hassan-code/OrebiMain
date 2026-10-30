@@ -5,7 +5,6 @@ import logo from "../assets/OREBI©.png"
 import { Link, useNavigate } from "react-router-dom";
 import { FaSearch, FaCaretUp, FaCaretDown, FaUser } from "react-icons/fa";
 import { useState, useRef, useEffect } from "react"
-import { ImCross } from "react-icons/im";
 
 const Header = () => {
 
@@ -140,39 +139,8 @@ const Header = () => {
                         </div>
 
                         {showCart && (
-                            <div className="absolute top-39 right-20 w-[360px] bg-white border border-[#262626]/20 shadow-xl">
-                            <div className="flex items-center justify-between bg-[#F5F5F3] p-4 mb-5">
-                                <div className="flex items-center gap-x-4">
-                                    <div className="w-20 h-20 bg-gray-300">
-                                    </div>
-                                    <div>
-                                        <h3 className="text-[14px] font-bold text-[#262626]">Black Smart Watch</h3>
-                                        <p className="text-[14px] font-bold text-[#262626] mt-1">$44.00</p>
-                                    </div>
-                                </div>
-                                <div>
-                                    <span className="cursor-text text-xl text-[#262626]"><ImCross /></span>
-                                </div>
-                            </div>
-
-                                <div className="px-4 py-1 mb-5">
-                                    <p className="text-[16px] text-[#767676]">
-                                    Subtotal: <span className="font-bold text-[#262626]">$44.00</span></p>
-                                </div>
-
-                                <div className="flex items-center px-4 pb-4 justify-between gap-x-5">
-                                <Link 
-                                    to="/cart" 
-                                    className="w-1/2 border border-[#262626] py-4 text-center text-[14px] font-bold text-[#262626] hover:bg-[#262626] hover:text-white transition-all duration-300">
-                                    View Cart
-                                </Link>
-                                <Link 
-                                    to="/checkout" 
-                                    className="w-1/2 bg-[#262626] border border-[#262626] py-4 text-center text-[14px] font-bold text-white hover:bg-transparent hover:text-[#262626] transition-all duration-300">
-                                    Checkout
-                                </Link>
-                                </div>
-
+                            <div className="absolute top-39 right-20 w-[360px] bg-white border border-[#262626]/20 shadow-xl"
+                            onClick={() => navigate("/cart")}>
                             </div>
                         )}
                     </Flex>

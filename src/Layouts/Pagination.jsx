@@ -28,7 +28,6 @@ const Pagination = ({ totalProducts, productsPerPage, currentPage, paginate }) =
         ))}
     </div>
 
-      {/* --- Products Count Info --- */}
     <div className="text-sm text-gray-500">
         Products from {((currentPage - 1) * productsPerPage) + 1} to{' '}
         {Math.min(currentPage * productsPerPage, totalProducts)} of {totalProducts}
