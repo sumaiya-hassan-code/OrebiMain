@@ -10,10 +10,13 @@ import card_img4 from "../assets/Special_offers_Image (3).png";
 import card_img6 from "../assets/Image_B.png";
 import card_img7 from "../assets/Special_offers_Image.png";
 import card_img8 from "../assets/New_Arrivals_img.png";
+import Pagination from "../Layouts/Pagination";
+import { useState } from "react";
 
 
 const Shop = () => {
- 
+  const [currentPage, setCurrentPage] = useState(1);
+  const productsPerPage = 12;
 
   return (
     <>
@@ -57,7 +60,7 @@ const Shop = () => {
               </div>
             </div>
             <div className="mt-10">
-              <div className="flex items-center gap-x-4 mt-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               <Card
               product_imgSrc={card_img1}
               product_addToCart="Add to Cart"
@@ -88,8 +91,6 @@ const Shop = () => {
               product_price={44}
               product_wishlist="Add to Wish List"
             />
-            </div>
-            <div className="flex items-center gap-x-4 mt-5">
               <Card
               product_imgSrc={card_img4}
               product_addToCart="Add to Cart"
@@ -120,8 +121,6 @@ const Shop = () => {
               product_price={44}
               product_wishlist="Add to Wish List"
             />
-            </div>
-            <div className="flex items-center gap-x-4 mt-5">
               <Card
               product_imgSrc={card_img7}
               product_addToCart="Add to Cart"
@@ -152,8 +151,6 @@ const Shop = () => {
               product_price={44}
               product_wishlist="Add to Wish List"
             />
-            </div>
-            <div className="flex items-center gap-x-4 mt-5">
               <Card
               product_imgSrc={card_img1}
               product_addToCart="Add to Cart"
@@ -184,7 +181,10 @@ const Shop = () => {
               product_price={44}
               product_wishlist="Add to Wish List"
             />
+              </div>
             </div>
+            <div className="mt-10">
+              <Pagination totalProducts={36} productsPerPage={productsPerPage} currentPage={currentPage} paginate={(page) => setCurrentPage(page)} />
             </div>
           </div>
         </div>
