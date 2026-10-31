@@ -15,7 +15,6 @@ import { FaCircleArrowRight, FaCircleArrowLeft } from "react-icons/fa6";
 const New_Arrival = () => {
   const swiperRef = useRef(null);
 
-  // ১. প্রোডাক্টগুলোর ডাটা একটি Array-তে রাখা হয়েছে
   const products = [
     {
       id: 1,

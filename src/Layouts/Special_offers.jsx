@@ -1,89 +1,20 @@
-import { useRef } from "react";
+import  { useRef } from "react";
 import Card from "../Components/Card";
-
-import card_img from "../assets/Special_offers_Image (3).png";
-import card_img2 from "../assets/Special_offers_Image (2).png";
-import card_img3 from "../assets/Special_offers_Image (1).png";
-import card_img4 from "../assets/Special_offers_Image.png";
-
 import Container from "../Components/Container";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import useFetch from "../Hooks/Usefetch";
 
 import { FaCircleArrowRight, FaCircleArrowLeft } from "react-icons/fa6";
 
 const Special_offers = () => {
   const swiperRef = useRef(null);
 
-  // 1. Array containing the product data
-  const products = [
-    {
-      id: 1,
-      product_imgSrc: card_img,
-      product_addToCart: "Add to Cart",
-      product_badge: "New",
-      product_color: "Black",
-      product_compare: "Compare",
-      product_name: "Basic Crew Neck Tee",
-      product_price: 44,
-      product_wishlist: "Add to Wish List",
-    },
-    {
-      id: 2,
-      product_imgSrc: card_img2,
-      product_addToCart: "Add to Cart",
-      product_badge: "New",
-      product_color: "Black",
-      product_compare: "Compare",
-      product_name: "Basic Crew Neck Tee",
-      product_price: 44,
-      product_wishlist: "Add to Wish List",
-    },
-    {
-      id: 3,
-      product_imgSrc: card_img3,
-      product_addToCart: "Add to Cart",
-      product_badge: "New",
-      product_color: "Black",
-      product_compare: "Compare",
-      product_name: "Basic Crew Neck Tee",
-      product_price: 44,
-      product_wishlist: "Add to Wish List",
-    },
-    {
-      id: 4,
-      product_imgSrc: card_img4,
-      product_addToCart: "Add to Cart",
-      product_badge: "New",
-      product_color: "Black",
-      product_compare: "Compare",
-      product_name: "Basic Crew Neck Tee",
-      product_price: 44,
-      product_wishlist: "Add to Wish List",
-    },
-    {
-      id: 5,
-      product_imgSrc: card_img4,
-      product_addToCart: "Add to Cart",
-      product_badge: "New",
-      product_color: "Black",
-      product_compare: "Compare",
-      product_name: "Basic Crew Neck Tee",
-      product_price: 44,
-      product_wishlist: "Add to Wish List",
-    },
-    {
-      id: 6,
-      product_imgSrc: card_img4,
-      product_addToCart: "Add to Cart",
-      product_badge: "New",
-      product_color: "Black",
-      product_compare: "Compare",
-      product_name: "Basic Crew Neck Tee",
-      product_price: 44,
-      product_wishlist: "Add to Wish List",
-    },
-  ];
+
+
+  const { data } = useFetch("https://dummyjson.com/products?limit=12");
+  const products = data?.products ?? [];
+
 
   return (
     <div className="px-4 md:px-10 py-20">
@@ -100,7 +31,7 @@ const Special_offers = () => {
               type="button"
               onClick={() => swiperRef.current?.slidePrev()}
               aria-label="Previous products"
-              className="text-5xl text-[#767676] absolute top-1/2 left-2 -translate-y-1/2 z-100"
+              className="text-5xl text-[#767676] absolute top-1/2 left-2 -translate-y-1/2 z-50 cursor-pointer"
             >
               <FaCircleArrowLeft />
             </button>
@@ -109,49 +40,43 @@ const Special_offers = () => {
               type="button"
               onClick={() => swiperRef.current?.slideNext()}
               aria-label="Next products"
-              className="text-5xl text-[#767676] absolute top-1/2 right-2 -translate-y-1/2 z-100"
+              className="text-5xl text-[#767676] absolute top-1/2 right-2 -translate-y-1/2 z-50 cursor-pointer"
             >
               <FaCircleArrowRight />
             </button>
           </div>
 
-          <Swiper
-            onSwiper={(swiper) => {
-              swiperRef.current = swiper;
-            }}
-            spaceBetween={20}
-            slidesPerView={1}
-            breakpoints={{
-              640: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-              },
-              768: {
-                slidesPerView: 3,
-                spaceBetween: 20,
-              },
-              1024: {
-                slidesPerView: 4,
-                spaceBetween: 20,
-              },
-            }}
-          >
-            {/* 2. Using .map() to loop through the array and render slides dynamically */}
-            {products.map((product) => (
-              <SwiperSlide key={product.id}>
-                <Card
-                  product_imgSrc={product.product_imgSrc}
-                  product_addToCart={product.product_addToCart}
-                  product_badge={product.product_badge}
-                  product_color={product.product_color}
-                  product_compare={product.product_compare}
-                  product_name={product.product_name}
-                  product_price={product.product_price}
-                  product_wishlist={product.product_wishlist}
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          {products && products.length > 0 ? (
+            <Swiper
+              onSwiper={(swiper) => {
+                swiperRef.current = swiper;
+              }}
+              spaceBetween={20}
+              slidesPerView={1}
+              breakpoints={{
+                640: { slidesPerView: 2, spaceBetween: 20 },
+                768: { slidesPerView: 3, spaceBetween: 20 },
+                1024: { slidesPerView: 4, spaceBetween: 20 },
+              }}
+            >
+              {products.map((product) => (
+                <SwiperSlide key={product.id}>
+                  <Card
+                    product_imgSrc={product.thumbnail} 
+                    product_name={product.title}       
+                    product_price={product.price}       
+                    product_badge={product.discountPercentage ? `${Math.round(product.discountPercentage)}% OFF` : ""}
+                    product_color="Default"             
+                    product_addToCart={() => console.log("Added", product.id)}
+                    product_compare={product.product_compare}
+                    product_wishlist={product.product_wishlist}
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          ) : (
+            <p className="text-center text-gray-500">No products available.</p>
+          )}
         </div>
       </Container>
     </div>
