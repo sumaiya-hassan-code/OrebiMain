@@ -20,7 +20,7 @@ const Special_offers = () => {
     <div className="px-4 md:px-10 py-20">
       <Container>
         <div className="mb-8 flex items-center justify-between relative">
-          <p className="text-[28px] font-bold text-[#262626] md:text-[39px]">
+          <p className="text-[28px] font-bold text-[#262626] md:text-[38px]">
             Special offers
           </p>
         </div>
@@ -66,7 +66,7 @@ const Special_offers = () => {
                     product_name={product.title}       
                     product_price={product.price}       
                     product_badge={product.discountPercentage ? `${Math.round(product.discountPercentage)}% OFF` : ""}
-                    product_color="Default"             
+                    product_color={product.product_color}             
                     product_addToCart={() => console.log("Added", product.id)}
                     product_compare={product.product_compare}
                     product_wishlist={product.product_wishlist}
