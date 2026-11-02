@@ -2,155 +2,161 @@ import Card from "../Components/Card";
 import Container from "../Components/Container";
 import Sidebar from "../Layouts/Sidebar";
 import { FaCaretDown } from "react-icons/fa";
-import card_img1 from "../assets/Image_B(1).png";
-import card_img2 from "../assets/Special_offers_Image (1).png";
-import card_img3 from "../assets/Special_offers_Image (2).png";
-import card_img4 from "../assets/Special_offers_Image (3).png";
+// import card_img1 from "../assets/Image_B(1).png";
+// import card_img2 from "../assets/Special_offers_Image (1).png";
+// import card_img3 from "../assets/Special_offers_Image (2).png";
+// import card_img4 from "../assets/Special_offers_Image (3).png";
 
-import card_img6 from "../assets/Image_B.png";
-import card_img7 from "../assets/Special_offers_Image.png";
-import card_img8 from "../assets/New_Arrivals_img.png";
+// import card_img6 from "../assets/Image_B.png";
+// import card_img7 from "../assets/Special_offers_Image.png";
+// import card_img8 from "../assets/New_Arrivals_img.png";
 import Pagination from "../Layouts/Pagination";
 import { useState } from "react";
+import useFetch from "../Hooks/Usefetch";
+
 
 const Shop = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 12;
 
-  const products = [
-    {
-      id: 1,
-      product_imgSrc: card_img1,
-      product_addToCart: "Add to Cart",
-      product_badge: "New",
-      product_color: "Black",
-      product_compare: "Compare",
-      product_name: "Basic Crew Neck Tee",
-      product_price: 44,
-      product_wishlist: "Add to Wish List",
-    },
-    {
-      id: 2,
-      product_imgSrc: card_img2,
-      product_addToCart: "Add to Cart",
-      product_badge: "-10%",
-      product_color: "Black",
-      product_compare: "Compare",
-      product_name: "Basic Crew Neck Tee",
-      product_price: 44,
-      product_wishlist: "Add to Wish List",
-    },
-    {
-      id: 3,
-      product_imgSrc: card_img3,
-      product_addToCart: "Add to Cart",
-      product_badge: "New",
-      product_color: "Black",
-      product_compare: "Compare",
-      product_name: "Basic Crew Neck Tee",
-      product_price: 44,
-      product_wishlist: "Add to Wish List",
-    },
-    {
-      id: 4,
-      product_imgSrc: card_img4,
-      product_addToCart: "Add to Cart",
-      product_badge: "New",
-      product_color: "Black",
-      product_compare: "Compare",
-      product_name: "Basic Crew Neck Tee",
-      product_price: 44,
-      product_wishlist: "Add to Wish List",
-    },
-    {
-      id: 5,
-      product_imgSrc: card_img2,
-      product_addToCart: "Add to Cart",
-      product_badge: "New",
-      product_color: "Black",
-      product_compare: "Compare",
-      product_name: "Basic Crew Neck Tee",
-      product_price: 44,
-      product_wishlist: "Add to Wish List",
-    },
-    {
-      id: 6,
-      product_imgSrc: card_img6,
-      product_addToCart: "Add to Cart",
-      product_badge: "New",
-      product_color: "Black",
-      product_compare: "Compare",
-      product_name: "Basic Crew Neck Tee",
-      product_price: 44,
-      product_wishlist: "Add to Wish List",
-    },
-    {
-      id: 7,
-      product_imgSrc: card_img7,
-      product_addToCart: "Add to Cart",
-      product_badge: "New",
-      product_color: "Black",
-      product_compare: "Compare",
-      product_name: "Basic Crew Neck Tee",
-      product_price: 44,
-      product_wishlist: "Add to Wish List",
-    },
-    {
-      id: 8,
-      product_imgSrc: card_img3,
-      product_addToCart: "Add to Cart",
-      product_badge: "New",
-      product_color: "Black",
-      product_compare: "Compare",
-      product_name: "Basic Crew Neck Tee",
-      product_price: 44,
-      product_wishlist: "Add to Wish List",
-    },
-    {
-      id: 9,
-      product_imgSrc: card_img4,
-      product_addToCart: "Add to Cart",
-      product_badge: "New",
-      product_color: "Black",
-      product_compare: "Compare",
-      product_name: "Basic Crew Neck Tee",
-      product_price: 44,
-      product_wishlist: "Add to Wish List",
-    },
-    {
-      id: 10,
-      product_imgSrc: card_img1,
-      product_addToCart: "Add to Cart",
-      product_badge: "New",
-      product_color: "Black",
-      product_compare: "Compare",
-      product_name: "Basic Crew Neck Tee",
-      product_price: 44,
-      product_wishlist: "Add to Wish List",
-    },
-    {
-      id: 11,
-      product_imgSrc: card_img8,
-      product_addToCart: "Add to Cart",
-      product_badge: "New",
-      product_color: "Black",
-      product_compare: "Compare",
-      product_name: "Basic Crew Neck Tee",
-      product_price: 44,
-      product_wishlist: "Add to Wish List",
-    },
-    {
-      id: 12,
-      product_imgSrc: card_img7,
-      product_addToCart: "Add to Cart",
-      product_badge: "New",
-      product_color: "Black",
-      product_compare: "Compare",
-      product_name: "Basic Crew Neck Tee",
-      product_price: 44,
-      product_wishlist: "Add to Wish List",
-    },
-  ];
+
+  const { data } = useFetch("https://dummyjson.com/products?limit=12");
+  const products = data?.products ?? [];
+
+  // const products = [
+  //   {
+  //     id: 1,
+  //     product_imgSrc: card_img1,
+  //     product_addToCart: "Add to Cart",
+  //     product_badge: "New",
+  //     product_color: "Black",
+  //     product_compare: "Compare",
+  //     product_name: "Basic Crew Neck Tee",
+  //     product_price: 44,
+  //     product_wishlist: "Add to Wish List",
+  //   },
+  //   {
+  //     id: 2,
+  //     product_imgSrc: card_img2,
+  //     product_addToCart: "Add to Cart",
+  //     product_badge: "-10%",
+  //     product_color: "Black",
+  //     product_compare: "Compare",
+  //     product_name: "Basic Crew Neck Tee",
+  //     product_price: 44,
+  //     product_wishlist: "Add to Wish List",
+  //   },
+  //   {
+  //     id: 3,
+  //     product_imgSrc: card_img3,
+  //     product_addToCart: "Add to Cart",
+  //     product_badge: "New",
+  //     product_color: "Black",
+  //     product_compare: "Compare",
+  //     product_name: "Basic Crew Neck Tee",
+  //     product_price: 44,
+  //     product_wishlist: "Add to Wish List",
+  //   },
+  //   {
+  //     id: 4,
+  //     product_imgSrc: card_img4,
+  //     product_addToCart: "Add to Cart",
+  //     product_badge: "New",
+  //     product_color: "Black",
+  //     product_compare: "Compare",
+  //     product_name: "Basic Crew Neck Tee",
+  //     product_price: 44,
+  //     product_wishlist: "Add to Wish List",
+  //   },
+  //   {
+  //     id: 5,
+  //     product_imgSrc: card_img2,
+  //     product_addToCart: "Add to Cart",
+  //     product_badge: "New",
+  //     product_color: "Black",
+  //     product_compare: "Compare",
+  //     product_name: "Basic Crew Neck Tee",
+  //     product_price: 44,
+  //     product_wishlist: "Add to Wish List",
+  //   },
+  //   {
+  //     id: 6,
+  //     product_imgSrc: card_img6,
+  //     product_addToCart: "Add to Cart",
+  //     product_badge: "New",
+  //     product_color: "Black",
+  //     product_compare: "Compare",
+  //     product_name: "Basic Crew Neck Tee",
+  //     product_price: 44,
+  //     product_wishlist: "Add to Wish List",
+  //   },
+  //   {
+  //     id: 7,
+  //     product_imgSrc: card_img7,
+  //     product_addToCart: "Add to Cart",
+  //     product_badge: "New",
+  //     product_color: "Black",
+  //     product_compare: "Compare",
+  //     product_name: "Basic Crew Neck Tee",
+  //     product_price: 44,
+  //     product_wishlist: "Add to Wish List",
+  //   },
+  //   {
+  //     id: 8,
+  //     product_imgSrc: card_img3,
+  //     product_addToCart: "Add to Cart",
+  //     product_badge: "New",
+  //     product_color: "Black",
+  //     product_compare: "Compare",
+  //     product_name: "Basic Crew Neck Tee",
+  //     product_price: 44,
+  //     product_wishlist: "Add to Wish List",
+  //   },
+  //   {
+  //     id: 9,
+  //     product_imgSrc: card_img4,
+  //     product_addToCart: "Add to Cart",
+  //     product_badge: "New",
+  //     product_color: "Black",
+  //     product_compare: "Compare",
+  //     product_name: "Basic Crew Neck Tee",
+  //     product_price: 44,
+  //     product_wishlist: "Add to Wish List",
+  //   },
+  //   {
+  //     id: 10,
+  //     product_imgSrc: card_img1,
+  //     product_addToCart: "Add to Cart",
+  //     product_badge: "New",
+  //     product_color: "Black",
+  //     product_compare: "Compare",
+  //     product_name: "Basic Crew Neck Tee",
+  //     product_price: 44,
+  //     product_wishlist: "Add to Wish List",
+  //   },
+  //   {
+  //     id: 11,
+  //     product_imgSrc: card_img8,
+  //     product_addToCart: "Add to Cart",
+  //     product_badge: "New",
+  //     product_color: "Black",
+  //     product_compare: "Compare",
+  //     product_name: "Basic Crew Neck Tee",
+  //     product_price: 44,
+  //     product_wishlist: "Add to Wish List",
+  //   },
+  //   {
+  //     id: 12,
+  //     product_imgSrc: card_img7,
+  //     product_addToCart: "Add to Cart",
+  //     product_badge: "New",
+  //     product_color: "Black",
+  //     product_compare: "Compare",
+  //     product_name: "Basic Crew Neck Tee",
+  //     product_price: 44,
+  //     product_wishlist: "Add to Wish List",
+  //   },
+  // ];
 
   return (
     <>
@@ -198,15 +204,14 @@ const Shop = () => {
 
                   {products.map((product) => (
                     <Card
-                      key={product.id}
-                      product_imgSrc={product.product_imgSrc}
-                      product_addToCart={product.product_addToCart}
-                      product_badge={product.product_badge}
-                      product_color={product.product_color}
-                      product_compare={product.product_compare}
-                      product_name={product.product_name}
-                      product_price={product.product_price}
-                      product_wishlist={product.product_wishlist}
+                    product_imgSrc={product.thumbnail} 
+                    product_name={product.title}       
+                    product_price={product.price}       
+                    product_badge={product.discountPercentage ? `${Math.round(product.discountPercentage)}% OFF` : ""}
+                    product_color={product.product_color}             
+                    product_addToCart={() => console.log("Added", product.id)}
+                    product_compare={product.product_compare}
+                    product_wishlist={product.product_wishlist}
                     />
                   ))}
                 </div>
