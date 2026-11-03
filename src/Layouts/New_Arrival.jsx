@@ -22,10 +22,8 @@ const New_Arrival = () => {
       product_addToCart: "Add to Cart",
       product_badge: "New",
       product_color: "Black",
-      product_compare: "Compare",
       product_name: "Basic Crew Neck Tee",
       product_price: 44,
-      product_wishlist: "Add to Wish List",
     },
     {
       id: 2,
@@ -33,10 +31,8 @@ const New_Arrival = () => {
       product_addToCart: "Add to Cart",
       product_badge: "New",
       product_color: "Black",
-      product_compare: "Compare",
       product_name: "Basic Crew Neck Tee",
       product_price: 44,
-      product_wishlist: "Add to Wish List",
     },
     {
       id: 3,
@@ -44,10 +40,8 @@ const New_Arrival = () => {
       product_addToCart: "Add to Cart",
       product_badge: "New",
       product_color: "Black",
-      product_compare: "Compare",
       product_name: "Basic Crew Neck Tee",
       product_price: 44,
-      product_wishlist: "Add to Wish List",
     },
     {
       id: 4,
@@ -55,10 +49,8 @@ const New_Arrival = () => {
       product_addToCart: "Add to Cart",
       product_badge: "New",
       product_color: "Black",
-      product_compare: "Compare",
       product_name: "Basic Crew Neck Tee",
       product_price: 44,
-      product_wishlist: "Add to Wish List",
     },
     {
       id: 5,
@@ -66,10 +58,8 @@ const New_Arrival = () => {
       product_addToCart: "Add to Cart",
       product_badge: "New",
       product_color: "Black",
-      product_compare: "Compare",
       product_name: "Basic Crew Neck Tee",
       product_price: 44,
-      product_wishlist: "Add to Wish List",
     },
     {
       id: 6,
@@ -77,10 +67,8 @@ const New_Arrival = () => {
       product_addToCart: "Add to Cart",
       product_badge: "New",
       product_color: "Black",
-      product_compare: "Compare",
       product_name: "Basic Crew Neck Tee",
       product_price: 44,
-      product_wishlist: "Add to Wish List",
     },
   ];
 
@@ -135,7 +123,6 @@ const New_Arrival = () => {
               },
             }}
           >
-            {/* ২. map() ব্যবহার করে dynamic SwiperSlide তৈরি করা হয়েছে */}
             {products.map((product) => (
               <SwiperSlide key={product.id}>
                 <Card

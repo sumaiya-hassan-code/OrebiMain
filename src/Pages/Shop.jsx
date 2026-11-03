@@ -20,7 +20,7 @@ const Shop = () => {
   const productsPerPage = 12;
 
 
-  const { data } = useFetch("https://dummyjson.com/products?limit=12");
+  const { data } = useFetch("https://dummyjson.com/products?limit=36");
   const products = data?.products ?? [];
 
   // const products = [
