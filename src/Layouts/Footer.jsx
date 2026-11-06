@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <div className="bg-[#F5F5F3] px-20 py-15">
       <Container>
-        <Flex className={'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8'}>
+        <Flex className={'grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-8'}>
           <div className="flex flex-col gap-y-5">
             <h3 className={"text-[16px] font-bold text-[#262626]"}>MENU</h3>
             <ul className="flex flex-col gap-y-1">
@@ -44,7 +44,7 @@ const Footer = () => {
           </div>
           <div className="flex flex-col gap-y-1">
             <div className="text-[16px] font-bold text-[#262626] -mt-20">
-              <p>(052) 611-5711</p>
+              <p>(052) 611-5712</p>
               <p>company@domain.com</p>
             </div>
             <p className="text-[14px] text-[#6D6D6D]">575 Crescent Ave. Quakertown, PA 18951</p>

@@ -1,13 +1,11 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { removeFromCart } from '../redux/cartSlice';
+import { useSelector } from 'react-redux';
 import { ImCross } from "react-icons/im";
 
 const Cart = () => {
-  const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cartItems);
 
   if (cartItems.length === 0) {
-    return <div className="p-4 text-center">Your cart is empty</div>;
+    return <div className="p-5 text-center">Your cart is empty</div>;
   }
 
   return (
@@ -20,7 +18,7 @@ const Cart = () => {
             <h4 className="font-semibold text-sm">{item.name}</h4>
             <p className="text-xs text-gray-500">${item.price} × {item.quantity}</p>
           </div>
-          <button onClick={() => dispatch(removeFromCart(item.id))}>
+          <button>
             <ImCross className="text-sm text-red-500 cursor-pointer" />
           </button>
         </div>
@@ -28,5 +26,4 @@ const Cart = () => {
     </div>
   );
 };
-
 export default Cart;
