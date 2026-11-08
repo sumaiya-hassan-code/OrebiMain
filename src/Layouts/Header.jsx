@@ -60,11 +60,11 @@ const Header = () => {
         <Container>
             <Flex>
                 <div className="w-full lg:w-[35%]">
-                    <Image imgSrc={logo}/>
+                    <Link to={"*"}><Image imgSrc={logo}/></Link>
                 </div>
                 <div className="w-full lg:w-[70%]">
                     <ul className="flex items-center gap-x-10">
-                        <li><Link to={"/"} className={"text-[#767676] hover:font-bold hover:text-[#262626] transition-all duration-300"}>Home</Link></li>
+                        <li><Link to={"/home"} className={"text-[#767676] hover:font-bold hover:text-[#262626] transition-all duration-300"}>Home</Link></li>
                         <li><Link to={"/shop"} className={"text-[#767676] hover:font-bold hover:text-[#262626] transition-all duration-300"}>Shop</Link></li>
                         <li><Link to={"/about"} className={"text-[#767676] hover:font-bold hover:text-[#262626] transition-all duration-300"}>About</Link></li>
                         <li><Link to={"/contact"} className={"text-[#767676] hover:font-bold hover:text-[#262626] transition-all duration-300"}>Contacts</Link></li>
