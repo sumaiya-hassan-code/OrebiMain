@@ -1,7 +1,14 @@
+import Container from "../Components/Container"
 
 const Contact = () => {
   return (
-    <div>Contact</div>
+    <>
+    <div className="">
+      <Container>
+        
+      </Container>
+    </div>
+    </>
   )
 }
 
