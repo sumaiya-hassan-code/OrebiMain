@@ -7,6 +7,7 @@ import Error from './Pages/Error'
 import Shop from './Pages/Shop'
 import Contact from './Pages/Contact'
 import Cart from './Layouts/Cart'
+import Login from './Pages/Login'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="about" element={<About />} /> 
         <Route path="Shop" element={<Shop />} /> 
         <Route path="Contact" element={<Contact />} /> 
+        <Route path="Login" element={<Login/>} /> 
         <Route path="*" element={<Error />} /> 
       </Route>
     </Routes>
