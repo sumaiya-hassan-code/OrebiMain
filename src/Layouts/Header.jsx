@@ -60,7 +60,7 @@ const Header = () => {
         <Container>
             <Flex>
                 <div className="w-full lg:w-[35%]">
-                    <Link to={"*"}><Image imgSrc={logo}/></Link>
+                    <Link to={"/home"}><Image imgSrc={logo}/></Link>
                 </div>
                 <div className="w-full lg:w-[70%]">
                     <ul className="flex items-center gap-x-10">
