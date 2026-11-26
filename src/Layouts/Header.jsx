@@ -124,7 +124,7 @@ const Header = () => {
                             {showUser ?  <FaCaretUp /> : <FaCaretDown  />   }
                             {showUser && (
                             <div className="absolute top-10 -left-30 flex flex-col items-center">
-                                <Link to={"/"}><div className="bg-[#2B2B2B] text-white text-[14px] font-bold px-9 py-5">My Account</div></Link>
+                                <Link to={"/MyAccount"}><div className="bg-[#2B2B2B] text-white text-[14px] font-bold px-9 py-5">My Account</div></Link>
                                 <Link to={"/login"}><div className="bg-white text-[#2B2B2B] text-[14px] px-12.5 py-5">Log Out</div></Link>
                             </div>
                             )}
