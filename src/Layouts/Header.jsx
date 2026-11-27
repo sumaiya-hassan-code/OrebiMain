@@ -1,5 +1,5 @@
 import Container from "../Components/Container"
-import Flex from "../Components/flex"
+import Flex from "../Components/Flex"
 import Image from "../Components/Image"
 import logo from "../assets/OREBI©.png"
 import { Link, useNavigate } from "react-router-dom";
